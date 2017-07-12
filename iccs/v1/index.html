@@ -231,7 +231,7 @@
       <div class="content">
         <div>
   <div style="font-weight:bold;font-size:40px;padding: 45px 5px 15px 25px; border-bottom: 1px solid #ccc;margin-right: 40%">Emergency24 ICCS API 1.0</div>
-  <div style="padding: 5px 5px 5px 25px">Updated 2017-06-21</div>
+  <div style="padding: 5px 5px 5px 25px">Updated 2017-07-11</div>
 </div>
 
 <h1 id="overview">Overview</h1>
@@ -364,7 +364,7 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/all"</sp
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p><code class="prettyprint">/contacts/all</code></p>
+<p><code class="prettyprint">GET /contacts/all</code></p>
 
 <p>Returns a list of contacts.</p>
 
@@ -402,7 +402,7 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/getConta
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p><code class="prettyprint">/contacts/getContact</code></p>
+<p><code class="prettyprint">GET /contacts/getContact</code></p>
 
 <table><thead>
 <tr>
@@ -411,16 +411,148 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/getConta
 </tr>
 </thead><tbody>
 <tr>
-<td>ContactID</td>
+<td>Contact ID</td>
 <td>Unique identifier for a particular contact.</td>
 </tr>
 <tr>
-<td>ExternalID</td>
+<td>External ID</td>
 <td>Retrieve records with a specific external ID.</td>
 </tr>
 </tbody></table>
 
 <p>Return information about a single contact by its ID. You can use Contact ID or External ID.</p>
+
+<h2 id="add-contact">Add Contact</h2>
+<pre class="highlight shell tab-shell"><code><span class="c"># Example</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/getContact?contactid=10000230"</span>
+  -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
+  -H <span class="s2">"Content-Type: application/json"</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"ExternalID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5556"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"EmailAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"test@gmail.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"test@emergency24.com"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"CellPhones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"3125558888"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"WorkPhones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"3125555555"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"HomePhones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"3125556666"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"GroupIDs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"10010"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"10070"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"CustomValues"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"property"</span><span class="p">:</span><span class="s2">"website"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"http://em24.com"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code class="prettyprint">POST /contacts/addContact</code></p>
+
+<p>Create a contact if it doesn&rsquo;t exist in a portal already.</p>
+
+<table><thead>
+<tr>
+<th>Required Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Contact JSON</td>
+<td>Used in the request body. This is JSON that represents a contact that you&rsquo;re creating. This should be of the format seen in the code sample given.</td>
+</tr>
+</tbody></table>
+
+<p>This will return a 409 Conflict error response if you are trying to create a new record and there is an existing record with the external ID.</p>
+
+<h2 id="update-contact">Update Contact</h2>
+<pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/getContact?contactid=10000230"</span>
+  -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
+  -H <span class="s2">"Content-Type: application/json"</span>
+  -d <span class="s2">""</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Test"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"EmailAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"t@gmail.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"t@emergency24.com"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code class="prettyprint">POST /contacts/updateContact?contact_id=:Contact ID</code></p>
+
+<p>Update an existing contact.</p>
+
+<table><thead>
+<tr>
+<th>Required Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Contact ID</td>
+<td>Unique identifier for a particular contact.</td>
+</tr>
+<tr>
+<td>External ID</td>
+<td>Unique external ID you assign to contact.</td>
+</tr>
+<tr>
+<td>Contact JSON</td>
+<td>Used in the request body. This is JSON that represents a contact that you&rsquo;re updating. This should be of the format seen in the code sample given.</td>
+</tr>
+</tbody></table>
+
+<p>All updates are full replacements of the contact properties. That means you need to include the original content that is not changing, plus the new and changed content in the JSON.</p>
+
+<p>If you want to remove all records under the property, set the value to &ldquo;&rdquo; or <a href="empty%20list"></a></p>
+
+<h2 id="delete-a-contact">Delete a Contact</h2>
+<pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/deleteContact?contact_id=10046110"</span>
+  -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#</span><span class="w"> </span><span class="err">Example</span><span class="w"> </span><span class="err">JSON</span><span class="w"> </span><span class="err">output</span><span class="p">:</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"RefId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"ContactID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10046110</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ExternalID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1111"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code class="prettyprint">GET /contacts/deleteContact?contact_id=:Contact ID</code></p>
+
+<p>Delete an existing contact.</p>
+
+<table><thead>
+<tr>
+<th>Required Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Contact ID</td>
+<td>Unique identifier for a particular contact.</td>
+</tr>
+<tr>
+<td>External ID</td>
+<td>Retrieve records with a specific external ID.</td>
+</tr>
+</tbody></table>
 
           <h1 id="response-status-codes">Response Status Codes</h1>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
