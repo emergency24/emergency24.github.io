@@ -641,6 +641,42 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/AddConta
 </code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contact add into group success."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"RefId"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000970</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code class="prettyprint">POST /contacts/AddContactToGroup?contact_id=:Contact ID&amp;group_id=:Group ID</code></p>
+
+<p>Associate a given contact to a group. A contact can be associated to multiply groups.</p>
+
+<table><thead>
+<tr>
+<th>Required Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Contact ID</td>
+<td>Unique identifier for a particular contact.</td>
+</tr>
+<tr>
+<td>External ID</td>
+<td>Unique external ID you assign to contact.</td>
+</tr>
+<tr>
+<td>Group ID</td>
+<td>The ID of a group</td>
+</tr>
+</tbody></table>
+
+<h2 id="remove-contact-to-group">Remove contact to Group</h2>
+<pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/AddContactToGroup/external_id=1111&amp;&amp;group_id=10000"</span>
+  -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Get all groups."</span><span class="p">,</span><span class="w">
     </span><span class="s2">"RefId"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000700</span><span class="p">,</span><span class="w">
     </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -692,9 +728,22 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/groups/all"</span
 </code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contact add into group success."</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"RefId"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000970</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Get all groups."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"RefId"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000700</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"GroupID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incident Command Group"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"03/24/2015 16:23:54"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"GroupID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10010</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Newsletter Test Group"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"03/24/2015 16:24:32"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p><code class="prettyprint">GET /groups/all</code></p>
