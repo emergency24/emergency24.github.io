@@ -231,7 +231,7 @@
       <div class="content">
         <div>
   <div style="font-weight:bold;font-size:40px;padding: 45px 5px 15px 25px; border-bottom: 1px solid #ccc;margin-right: 40%">Emergency24 ICCS API 1.0</div>
-  <div style="padding: 5px 5px 5px 25px">Updated 2017-07-11</div>
+  <div style="padding: 5px 5px 5px 25px">Updated 2017-07-25</div>
 </div>
 
 <h1 id="overview">Overview</h1>
@@ -351,22 +351,41 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/all"</sp
     </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"ContactID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10045230</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Harges"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"ExternalID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"016323"</span><span class="w">
+            </span><span class="s2">"ExternalID"</span><span class="p">:</span><span class="w"> </span><span class="mi">11111111</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test One"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"One"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Site Manager"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"DepartmentID"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Department"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08/17/2016 14:44:03"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"ContactID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10045220</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jessica"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Richter"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"ExternalID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"002201"</span><span class="w">
+            </span><span class="s2">"Status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Two"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Two"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Site Manager"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"DepartmentID"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Department"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08/17/2016 14:44:03"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p><code class="prettyprint">GET /contacts/all</code></p>
 
-<p>Returns a list of contacts.</p>
+<p>Returns a paginated list of contacts.</p>
+
+<p>Optional Parameters | How to Use | Description
+&mdash;&mdash;&mdash;&mdash;&ndash; | &mdash;&mdash;&mdash;&mdash;&ndash; 
+Page Size | page_size= Used in the request URL | The number of records to return. 
+Page | page= | Used to page through the results. Begin from 0.</p>
 
 <h2 id="get-contact-by-id">Get Contact by ID</h2>
 <pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
@@ -375,16 +394,44 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/getConta
 </code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Get all contacts."</span><span class="p">,</span><span class="w">
     </span><span class="s2">"RefId"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000540</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
         </span><span class="s2">"ContactID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000230</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ExternalID"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baird L"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"CreatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6/5/2015 2:39:32 PM"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ExternalID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10012240</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test One"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Site Manager"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"DepartmentID"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Department"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Address1"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Address2"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"City"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"State"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Zip"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"CreatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08/17/2016 14:44:03"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"Phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"PhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+13125558888"</span><span class="w">
+                </span><span class="s2">"PID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10012880</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"PhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+17731111777"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Text"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Voice"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"EmailAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"EID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10011100</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"EmailAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1@test.org"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"EID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10016420</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"EmailAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test2@test.org"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="s2">"Groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -399,7 +446,8 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/getConta
                 </span><span class="s2">"CreatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6/4/2015 4:46:09 PM"</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p><code class="prettyprint">GET /contacts/getContact</code></p>
@@ -424,14 +472,24 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/getConta
 
 <h2 id="add-contact">Add Contact</h2>
 <pre class="highlight shell tab-shell"><code><span class="c"># Example</span>
-curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/getContact?contactid=10000230"</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/addContact"</span>
   -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
   -H <span class="s2">"Content-Type: application/json"</span>
+  -d <span class="s2">""</span>
 </code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"ExternalID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5556"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Title"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Department"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"DepartmentID"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Address1"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Address2"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"City"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"State"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Zip"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Language"</span><span class="p">:</span><span class="s2">"English"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"EmailAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"test@gmail.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"test@emergency24.com"</span><span class="w">
@@ -473,6 +531,24 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/getConta
 </tr>
 </tbody></table>
 
+<table><thead>
+<tr>
+<th>Required Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>External ID</td>
+<td>Unique external ID you assign to contact.</td>
+</tr>
+<tr>
+<td>First Name</td>
+<td>First name</td>
+</tr>
+</tbody></table>
+
+<p>If &lsquo;FirstName&rsquo;,&lsquo;LastName&rsquo; and &lsquo;Description&rsquo; field have the same match in an existing record, the system will treat this new record as duplicate data and return 400 error.</p>
+
 <p>This will return a 409 Conflict error response if you are trying to create a new record and there is an existing record with the external ID.</p>
 
 <h2 id="update-contact">Update Contact</h2>
@@ -482,11 +558,18 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/getConta
   -H <span class="s2">"Content-Type: application/json"</span>
   -d <span class="s2">""</span>
 </code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Test"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"EmailAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"t@gmail.com"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"t@emergency24.com"</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="s2">"ExternalID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5558"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Site Manager"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"DepartmentID"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Department"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Address2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"City"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"State"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p><code class="prettyprint">POST /contacts/updateContact?contact_id=:Contact ID</code></p>
@@ -515,8 +598,6 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/getConta
 
 <p>All updates are full replacements of the contact properties. That means you need to include the original content that is not changing, plus the new and changed content in the JSON.</p>
 
-<p>If you want to remove all records under the property, set the value to &ldquo;&rdquo; or <a href="empty%20list"></a></p>
-
 <h2 id="delete-a-contact">Delete a Contact</h2>
 <pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
 curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/deleteContact?contact_id=10046110"</span>
@@ -529,8 +610,7 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/deleteCo
     </span><span class="s2">"RefId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"ContactID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10046110</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ExternalID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1111"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"Deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="s2">"ExternalID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1111"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -551,6 +631,114 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/deleteCo
 <tr>
 <td>External ID</td>
 <td>Retrieve records with a specific external ID.</td>
+</tr>
+</tbody></table>
+
+<h2 id="add-contact-to-group">Add contact to Group</h2>
+<pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/AddContactToGroup/external_id=1111&amp;&amp;group_id=10000"</span>
+  -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Get all groups."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"RefId"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000700</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"GroupID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incident Command Group"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"03/24/2015 16:23:54"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"GroupID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10010</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Newsletter Test Group"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"03/24/2015 16:24:32"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code class="prettyprint">POST /contacts/AddContactToGroup?contact_id=:Contact ID&amp;group_id=:Group ID</code></p>
+
+<p>Associate a given contact to a group. A contact can be associated to multiply groups.</p>
+
+<table><thead>
+<tr>
+<th>Required Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Contact ID</td>
+<td>Unique identifier for a particular contact.</td>
+</tr>
+<tr>
+<td>External ID</td>
+<td>Unique external ID you assign to contact.</td>
+</tr>
+<tr>
+<td>Group ID</td>
+<td>The ID of a group</td>
+</tr>
+</tbody></table>
+
+<h1 id="groups">Groups</h1>
+
+<h2 id="get-all-groups">Get All Groups</h2>
+<pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/groups/all"</span>
+  -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contact add into group success."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"RefId"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000970</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code class="prettyprint">GET /groups/all</code></p>
+
+<p>Returns a list of groups.</p>
+
+<h2 id="get-contacts-of-a-group">Get contacts of a group</h2>
+<pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/groups/getmembers?group_id=1111"</span>
+  -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Get group members."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"RefId"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000700</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"ContactID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10046000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ExternalID"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Janeen Dupepe"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07/05/2017 16:37:48"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"ContactID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10046010</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ExternalID"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Susanna Folse"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07/05/2017 16:37:48"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code class="prettyprint">GET /groups/GetMembers</code></p>
+
+<p>Returns all of the contacts under the group. </p>
+
+<table><thead>
+<tr>
+<th>Required Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Group ID</td>
+<td>Unique identifier for a particular group.</td>
 </tr>
 </tbody></table>
 
