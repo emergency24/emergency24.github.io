@@ -384,10 +384,24 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/all"</sp
 
 <p>Returns a paginated list of contacts.</p>
 
-<p>Optional Parameters | How to Use | Description
-&mdash;&mdash;&mdash;&mdash;&ndash; | &mdash;&mdash;&mdash;&mdash;&ndash; 
-Page Size | page_size= Used in the request URL | The number of records to return. 
-Page | page= | Used to page through the results. Begin from 0.</p>
+<table><thead>
+<tr>
+<th>Optional Parameters</th>
+<th>How to Use</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Page Size</td>
+<td>page_size= Used in the request URL</td>
+<td>The number of records to return.</td>
+</tr>
+<tr>
+<td>Page</td>
+<td>page=</td>
+<td>Used to page through the results. Begin from 0.</td>
+</tr>
+</tbody></table>
 
 <h2 id="get-contact-by-id">Get Contact by ID</h2>
 <pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
