@@ -466,7 +466,7 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/10000230
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p><code class="prettyprint">GET /contacts/:Contact ID</code></p>
+<p><code class="prettyprint">GET /contacts/{contact_id}</code></p>
 
 <table><thead>
 <tr>
@@ -503,7 +503,7 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/addConta
   -H <span class="s2">"Content-Type: application/json"</span>
   -X <span class="s2">"POST"</span>
   -d <span class="s2">""</span>
-</code></pre><pre class="highlight json tab-json"><code><span class="err">#Example</span><span class="w"> </span><span class="err">Contact</span><span class="w"> </span><span class="err">Object</span><span class="p">:</span><span class="w">
+</code></pre><pre class="highlight json tab-json"><code><span class="err">#Example</span><span class="w"> </span><span class="err">Contact</span><span class="w"> </span><span class="err">Add</span><span class="w"> </span><span class="err">Object</span><span class="p">:</span><span class="w">
 </span><span class="p">{</span><span class="w">
   </span><span class="s2">"ExternalID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5556"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
@@ -618,33 +618,9 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/10000230
     </span><span class="s2">"GroupIDs"</span><span class="p">:[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p><code class="prettyprint">PUT /contacts/:Contact ID</code></p>
+<p><code class="prettyprint">PUT /contacts/{contact_id}</code></p>
 
-<table><thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Contact ID</td>
-<td>Unique identifier for a particular contact.</td>
-</tr>
-</tbody></table>
-
-<p><code class="prettyprint">PUT /contacts/external/:External ID</code></p>
-
-<table><thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>External ID</td>
-<td>Unique identifier for a particular contact.</td>
-</tr>
-</tbody></table>
+<p><code class="prettyprint">PUT /contacts/external/{external_id}</code></p>
 
 <p>Update an existing contact.</p>
 
@@ -654,6 +630,14 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/10000230
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>Contact ID</td>
+<td>Unique identifier for a particular contact.</td>
+</tr>
+<tr>
+<td>External ID</td>
+<td>Unique identifier for a particular contact.</td>
+</tr>
 <tr>
 <td>Contact JSON</td>
 <td>Used in the request body. This is JSON that represents a contact that you&rsquo;re updating. This should be of the format seen in the code sample given.</td>
@@ -679,9 +663,9 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/10046110
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p><code class="prettyprint">Delete /contacts/:Contact ID</code></p>
+<p><code class="prettyprint">Delete /contacts/{contact_id}</code></p>
 
-<p><code class="prettyprint">Delete /contacts/:External ID</code></p>
+<p><code class="prettyprint">Delete /contacts/external/{external_id}</code></p>
 
 <p>Delete an existing contact.</p>
 
@@ -714,7 +698,11 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/group/10
     </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p><code class="prettyprint">PUT /contacts/group/:Group ID/contact/:Contact ID</code></p>
+<p><code class="prettyprint">PUT /contacts/group/{group_id}/contact/{contact_id}</code></p>
+
+<p><code class="prettyprint">PUT /contacts/group/{group_id}/external/{external_id}</code></p>
+
+<p>Associate a given contact to a group. A contact can be associated to multiply groups.</p>
 
 <table><thead>
 <tr>
@@ -727,20 +715,6 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/group/10
 <td>Unique identifier for a particular contact.</td>
 </tr>
 <tr>
-<td>Group ID</td>
-<td>The ID of a group</td>
-</tr>
-</tbody></table>
-
-<p><code class="prettyprint">PUT /contacts/group/:Group ID/external/:External ID</code></p>
-
-<table><thead>
-<tr>
-<th>Required Parameters</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
 <td>External ID</td>
 <td>Unique external ID you assign to contact.</td>
 </tr>
@@ -749,8 +723,6 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/group/10
 <td>The ID of a group</td>
 </tr>
 </tbody></table>
-
-<p>Associate a given contact to a group. A contact can be associated to multiply groups.</p>
 
 <h2 id="delete-contact-from-group">Delete contact from Group</h2>
 <pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
@@ -766,9 +738,9 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/group/10
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
-<p><code class="prettyprint">Delete /contacts/group/:Group ID/contact/:Contact ID</code></p>
+<p><code class="prettyprint">Delete /contacts/group/{group_id}/contact/{contact_id}</code></p>
 
-<p><code class="prettyprint">Delete /contacts/group/:Group ID/external/:External ID</code></p>
+<p><code class="prettyprint">Delete /contacts/group/{group_id}/external/{external_id}</code></p>
 
 <p>Remove a contact from a group</p>
 
@@ -848,7 +820,7 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/groups/1111"</spa
       </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p><code class="prettyprint">GET /groups/:Group ID</code></p>
+<p><code class="prettyprint">GET /groups/{group_id}</code></p>
 
 <p>Returns all of the contacts under the group. </p>
 
