@@ -350,7 +350,12 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/all"</sp
     </span><span class="s2">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="s2">"RefId"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000460</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"PageNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"TotalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"TotalCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"List"</span><span class="p">:[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"ContactID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10045230</span><span class="p">,</span><span class="w">
             </span><span class="s2">"ExternalID"</span><span class="p">:</span><span class="w"> </span><span class="mi">11111111</span><span class="p">,</span><span class="w">
@@ -378,6 +383,7 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/all"</sp
             </span><span class="s2">"Date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08/17/2016 14:44:03"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p><code class="prettyprint">GET /contacts/all</code></p>
@@ -394,12 +400,12 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/all"</sp
 <tr>
 <td>Page Size</td>
 <td>page_size= Used in the request URL</td>
-<td>The number of records to return.</td>
+<td>The number of records to return. Default value is 500.</td>
 </tr>
 <tr>
 <td>Page</td>
 <td>page=</td>
-<td>Used to page through the results. Begin from 0.</td>
+<td>Used to page through the results. Begin from 1.</td>
 </tr>
 </tbody></table>
 
