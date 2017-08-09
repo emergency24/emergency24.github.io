@@ -588,7 +588,7 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/addConta
 
 <h2 id="update-contact">Update Contact</h2>
 <pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
-curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/getContact?contactid=10000230"</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/10000230"</span>
   -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
   -H <span class="s2">"Content-Type: application/json"</span>
   -X <span class="s2">"PUT"</span>
@@ -703,7 +703,7 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/10046110
 
 <h2 id="add-contact-to-group">Add contact to Group</h2>
 <pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
-curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/AddContactToGroup/external_id=1111&amp;&amp;group_id=10000"</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/group/10000/external/1111"</span>
   -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
   -X <span class="s2">"PUT"</span>
 </code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -754,7 +754,7 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/AddConta
 
 <h2 id="delete-contact-from-group">Delete contact from Group</h2>
 <pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
-curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/deleteContactToGroup/external_id=1111&amp;&amp;group_id=10000"</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/group/10000/external/1111"</span>
   -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
   -X <span class="s2">"DELETE"</span>
 </code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -825,7 +825,7 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/groups/all"</span
 
 <h2 id="get-contacts-of-a-group">Get contacts of a group</h2>
 <pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
-curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/groups/getmembers?group_id=1111"</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/groups/1111"</span>
   -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
 </code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -848,7 +848,7 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/groups/getmembers
       </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p><code class="prettyprint">GET /groups/GetMembers</code></p>
+<p><code class="prettyprint">GET /groups/:Group ID</code></p>
 
 <p>Returns all of the contacts under the group. </p>
 
