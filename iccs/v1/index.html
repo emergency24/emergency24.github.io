@@ -468,6 +468,10 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/10000230
 </span></code></pre>
 <p><code class="prettyprint">GET /contacts/{contact_id}</code></p>
 
+<p><code class="prettyprint">GET /contacts/exteranl/{external_id}</code></p>
+
+<p>Return information about a single contact by its ID. You can use Contact ID or External ID.</p>
+
 <table><thead>
 <tr>
 <th>Required Parameters</th>
@@ -478,23 +482,11 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/10000230
 <td>Contact ID</td>
 <td>Unique identifier for a particular contact.</td>
 </tr>
-</tbody></table>
-
-<p><code class="prettyprint">GET /contacts/exteranl/:Exteranl ID</code></p>
-
-<table><thead>
-<tr>
-<th>Required Parameters</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
 <tr>
 <td>External ID</td>
 <td>Retrieve records with a specific external ID.</td>
 </tr>
 </tbody></table>
-
-<p>Return information about a single contact by its ID. You can use Contact ID or External ID.</p>
 
 <h2 id="add-contact">Add Contact</h2>
 <pre class="highlight shell tab-shell"><code><span class="c"># Example</span>
