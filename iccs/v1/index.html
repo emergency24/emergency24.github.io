@@ -231,7 +231,7 @@
       <div class="content">
         <div>
   <div style="font-weight:bold;font-size:40px;padding: 45px 5px 15px 25px; border-bottom: 1px solid #ccc;margin-right: 40%">Emergency24 ICCS API 1.0</div>
-  <div style="padding: 5px 5px 5px 25px">Updated 2017-08-09</div>
+  <div style="padding: 5px 5px 5px 25px">Updated 2018-05-25</div>
 </div>
 
 <h1 id="overview">Overview</h1>
@@ -762,6 +762,51 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/contacts/group/10
 </tr>
 </tbody></table>
 
+<h1 id="administrators">Administrators</h1>
+
+<h2 id="get-all-administrators">Get All Administrators</h2>
+<pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/administrators/all"</span>
+  -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Get all administrators."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"RefId"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000700</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"PageNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"PageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TotalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TotalCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"List"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"AdministratorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test2202017@emergency24.com"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Engineer"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Department"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/20/2018 22:35:11"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"AdministratorID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000001</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test2202018@emergency24.com"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Department"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07/20/2017 20:34:46"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code class="prettyprint">GET /administrators/all</code></p>
+
+<p>Returns a paginated list of administrators.</p>
+
 <h1 id="groups">Groups</h1>
 
 <h2 id="get-all-groups">Get All Groups</h2>
@@ -831,6 +876,474 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/groups/1111"</spa
 <tr>
 <td>Group ID</td>
 <td>Unique identifier for a particular group.</td>
+</tr>
+</tbody></table>
+
+<h1 id="notifications">Notifications</h1>
+
+<p>You can use the Notifications API to build notifications and send these notifications to users. </p>
+
+<h2 id="list-notifications">List Notifications</h2>
+<pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/notifications/all"</span>
+  -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Get all notifications."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"RefId"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000700</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"PageNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"PageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TotalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TotalCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"List"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"NotificationID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10003000</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOCKDOWN"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Severe"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"ActiveHours"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"ShortDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAMPUS LOCKDOWN---Lockdown All Buildings [Test Message]"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"NotificationID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10003080</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEVERE WEATHER"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Extreme"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"ActiveHours"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"ShortDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TORNADO WARNING---FIND SAFE PLACE"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code class="prettyprint">GET /notifications/all</code></p>
+
+<p>Returns a list of notification channels you already have. This operation can be paginated.</p>
+
+<h2 id="get-notification">Get Notification</h2>
+<pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/notifications/10003000"</span>
+  -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"RefId"</span><span class="p">:</span><span class="w"> </span><span class="mi">15950470</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"NotificationID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10003000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOCKDOWN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moderate"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ActiveHours"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"EmailEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TextEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"VoiceEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ReportLocationEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"Title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAMPUS LOCKDOWN"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lockdown all buildings - test6"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"AttachmentID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000010</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/pdf"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Door Lock Procedures"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"URL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3.amazonaws.com/a2.emergency24.com/stage-campusalert1/campusalert/docs/458600ec-p1.pdf"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"Surveillances"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"Recipients"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"Properties"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"Groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mi">10100</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code class="prettyprint">GET /notifications/{notification_id}</code></p>
+
+<p>Returns setup information about the given notification. </p>
+
+<h3 id="notification-object">Notification Object</h3>
+
+<p>Fields</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>NotificationID</td>
+<td>ID of the notification</td>
+<td>int</td>
+</tr>
+<tr>
+<td>Category</td>
+<td>Category of the notification</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>Priority of the notification. One of (Extreme,Severe,Moderate,Minor)</td>
+<td>string</td>
+</tr>
+<tr>
+<td>ActiveHours</td>
+<td>Active hours of the notification</td>
+<td>int</td>
+</tr>
+<tr>
+<td>Message</td>
+<td>Defines the message to be sent.</td>
+<td><a href="#message-object">Message Object</a></td>
+</tr>
+<tr>
+<td>Recipient</td>
+<td>Identifies the intended recipient of the notification.</td>
+<td><a href="#recipient-object">Recipient Object</a></td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>Change the priority of the notification</td>
+<td>string</td>
+</tr>
+<tr>
+<td>EmailEnabled</td>
+<td>If send email to recipient</td>
+<td>bool</td>
+</tr>
+<tr>
+<td>TextEnabled</td>
+<td>If send text message to recipient</td>
+<td>bool</td>
+</tr>
+<tr>
+<td>VoiceEnabled</td>
+<td>If send voice message to recipient</td>
+<td>bool</td>
+</tr>
+<tr>
+<td>ReportLocationEnabled</td>
+<td>If attach &lsquo;Report Location&rsquo; link to notification. If applied.</td>
+<td>bool</td>
+</tr>
+</tbody></table>
+
+<h3 id="message-object">Message Object</h3>
+
+<p>Fields</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Title</td>
+<td>The title of the notification</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>The main body of the notification</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Attachments</td>
+<td>A list of attached documents</td>
+<td>[Attachment]</td>
+</tr>
+<tr>
+<td>Surveillances</td>
+<td>A list of attached surveillance</td>
+<td>[Surveillance]</td>
+</tr>
+</tbody></table>
+
+<h3 id="recipient-object">Recipient Object</h3>
+
+<p>Fields</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Groups</td>
+<td>List of group IDs.</td>
+<td>[int]</td>
+</tr>
+<tr>
+<td>Properties</td>
+<td>List of property IDs.</td>
+<td>[int]</td>
+</tr>
+</tbody></table>
+
+<h2 id="update-notification">Update Notification</h2>
+<pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/notifications/10003000"</span>
+  POST
+  -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
+  -H <span class="s2">"Content-Type: application/json"</span> 
+  -d <span class="s1">'{
+    "Priority": "Moderate",
+    "Message": {
+        "Title": "CAMPUS LOCKDOWN",
+        "Text": "Lockdown all buildings - test",
+    },
+    "Recipients": {
+        "Groups": [10100]
+    }
+}'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Update success."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"RefId"</span><span class="p">:</span><span class="w"> </span><span class="mi">15950470</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code class="prettyprint">POST /notifications/{notification_id}</code></p>
+
+<p>Updates an existing notification.</p>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Notification ID</td>
+<td>Identifier of the notification.</td>
+<td>int</td>
+</tr>
+<tr>
+<td>Notification Object</td>
+<td>Contents of the notification. Send a JSON format body in your HTTP request to modify your notification. An empty property value would clear the deault setting.</td>
+<td><a href="#notification-options">Notification Options</a></td>
+</tr>
+</tbody></table>
+
+<h2 id="send-a-notification-message">Send a Notification Message</h2>
+<pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/notifications/10003000/push"</span>
+  POST
+  -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
+  -H <span class="s2">"Content-Type: application/json"</span> 
+  -d <span class="s1">'{
+    "Priority": "Moderate",
+    "Message": {
+        "Title": "CAMPUS LOCKDOWN",
+        "Text": "Lockdown all buildings - test",
+    },
+    "Recipients": {
+        "Groups": [10100]
+    }
+}'</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incident 10015020 CAMPUS LOCKDOWN generate success."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"RefId"</span><span class="p">:</span><span class="w"> </span><span class="mi">15950470</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10015020</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code class="prettyprint">POST /notifications/{notification_id}/push</code></p>
+
+<p>Immediately send notification to users.</p>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Notification ID</td>
+<td>(Required) Identifier of the notification.</td>
+<td>int</td>
+</tr>
+<tr>
+<td>Notification Object</td>
+<td>(Optional) Contents of the notification. Send a JSON format body in your HTTP request to modify your notification. If not provided, this method will use the existing settings(check by API <a href="#get-notification">Get Notification</a>). An empty property value would clear the deault setting.</td>
+<td><a href="#notification-options">Notification Options</a></td>
+</tr>
+</tbody></table>
+
+<h3 id="notification-options">Notification Options</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Message</td>
+<td>Defines the message to be sent.</td>
+<td><a href="#message-options">Message Options</a></td>
+</tr>
+<tr>
+<td>Recipient</td>
+<td>Identifies the intended recipient of the notification. Recipient cannot be empty.</td>
+<td><a href="#recipient-options">Recipient Options</a></td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>Change the priority of the notification. One of (Extreme,Severe,Moderate,Minor)</td>
+<td>string</td>
+</tr>
+<tr>
+<td>EmailEnabled</td>
+<td>If send email to recipient</td>
+<td>bool</td>
+</tr>
+<tr>
+<td>TextEnabled</td>
+<td>If send text message to recipient</td>
+<td>bool</td>
+</tr>
+<tr>
+<td>VoiceEnabled</td>
+<td>If send voice message to recipient</td>
+<td>bool</td>
+</tr>
+<tr>
+<td>ReportLocationEnabled</td>
+<td>If attach &lsquo;Report Location&rsquo; link to notification. If applied.</td>
+<td>bool</td>
+</tr>
+</tbody></table>
+
+<h3 id="message-options">Message Options</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Title</td>
+<td>The title of the notification</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>The main body of the notification</td>
+<td>string</td>
+</tr>
+</tbody></table>
+
+<h3 id="recipient-options">Recipient Options</h3>
+
+<p>Fields</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Groups</td>
+<td>List of group IDs. If you send an empty array, the system will clear the groups setting.</td>
+<td>[int]</td>
+</tr>
+<tr>
+<td>Properties</td>
+<td>List of property IDs. If you send an empty array, the system will clear the properties setting.</td>
+<td>[int]</td>
+</tr>
+</tbody></table>
+
+<h2 id="list-notification-history">List Notification History</h2>
+<pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/notifications/10003000/history"</span>
+  -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"RefId"</span><span class="p">:</span><span class="w"> </span><span class="mi">15467260</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10094500</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Severe"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"Title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAMPUS LOCKDOWN"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lockdown All Buildings [Test Message]"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"StartDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-30T16:57:50.473Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ExpiryDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-30T17:57:50.473Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10094470</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Severe"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"Title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAMPUS LOCKDOWN"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lockdown All Buildings [Test Message]"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"StartDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-25T16:58:36.703Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ExpiryDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-25T17:58:36.703Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code class="prettyprint">GET /notifications/{notification_id}/history</code></p>
+
+<p>Returns a list of history for a given notification.</p>
+
+<p>Fields</p>
+
+<h3 id="notification-object">Notification Object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The incident ID</td>
+<td>int</td>
+</tr>
+<tr>
+<td>Message</td>
+<td>Contents of the notification</td>
+<td><a href="#message-object">Message Object</a></td>
+</tr>
+<tr>
+<td>StartDate</td>
+<td>The time the incident generated</td>
+<td>unix time stamp</td>
+</tr>
+<tr>
+<td>ExpiryDate</td>
+<td>The time the incident expired</td>
+<td>unix time stamp</td>
 </tr>
 </tbody></table>
 
