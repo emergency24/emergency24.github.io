@@ -879,6 +879,71 @@ curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/groups/1111"</spa
 </tr>
 </tbody></table>
 
+<h1 id="properties">Properties</h1>
+
+<h2 id="get-all-properties">Get All Properties</h2>
+<pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/properties/all"</span>
+  -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Get all properties."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"RefId"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000700</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"PropertyID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"City Campus"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code class="prettyprint">GET /properties/all</code></p>
+
+<p>Returns a list of properties.</p>
+
+<h2 id="get-property-by-id">Get property by ID</h2>
+<pre class="highlight shell tab-shell"><code><span class="c"># Authenticate API requests with the bearer token</span>
+curl <span class="s2">"https://www.emergency24.com/api/iccs/v1/properties/10000"</span>
+  -H <span class="s2">"Authorization: Bearer 31b61649-5405-45ac-9927-3c1d1b2c84b2"</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Get property detail."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"RefId"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000700</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> 
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"PropertyID"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"999 Building"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"Line1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"999 E Touhy Ave"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Line2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"City"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Des Plaines"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"State"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IL"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ZipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60018"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"CountryID"</span><span class="p">:</span><span class="w"> </span><span class="mi">840</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"Groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"Surveillances"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code class="prettyprint">GET /properties/{property_id}</code></p>
+
+<p>Returns all of the contacts under the group. </p>
+
+<table><thead>
+<tr>
+<th>Required Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Property ID</td>
+<td>Unique identifier for a particular property.</td>
+</tr>
+</tbody></table>
+
 <h1 id="notifications">Notifications</h1>
 
 <p>You can use the Notifications API to build notifications and send these notifications to users. </p>
